@@ -22,40 +22,61 @@ const Login = () => {
     };
 
     return (
-        <>
+      <>
         <Navbar />
-        <div style={{ maxWidth: 350, margin: "70px auto", padding: 25, border: "3px solid #ccc", borderRadius: 8 }}>
-            <h2>Login</h2>
+        <body className="bg-blue-300">
+          <div
+            className="bg-white"
+            style={{
+              maxWidth: 350,
+              margin: "70px auto",
+              padding: 25,
+              border: "3px solid black",
+              borderRadius: 8,
+            }}
+          >
+            <h2 className="text-2xl font-bold pb-5">Login Form</h2>
             <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: 12 }}>
-                    <label>
-                        Username:
-                        <input
-                            type="text"
-                            name="username"
-                            value={form.username}
-                            onChange={handleChange}
-                            style={{ width: "100%", padding: 8, marginTop: 4 }}
-                        />
-                    </label>
-                </div>
-                <div style={{ marginBottom: 12 }}>
-                    <label>
-                        Password:
-                        <input
-                            type="password"
-                            name="password"
-                            value={form.password}
-                            onChange={handleChange}
-                            style={{ width: "100%", padding: 8, marginTop: 4 }}
-                        />
-                    </label>
-                </div>
-                {error && <div style={{ color: "red", marginBottom: 12 }}>{error}</div>}
-                <button type="submit" className="border rounded-lg bg-blue-200 font-bold" style={{ width: "100%", padding: 10 }}>Login</button>
+              <div style={{ marginBottom: 12 }}>
+                <label>
+                  Username:
+                  <input
+                    className="border-2 rounded-lg bg-blue-200 border-blue-500"
+                    type="text"
+                    name="username"
+                    value={form.username}
+                    onChange={handleChange}
+                    style={{ width: "100%", padding: 8, marginTop: 4 }}
+                  />
+                </label>
+              </div>
+              <div style={{ marginBottom: 15 }}>
+                <label>
+                  Password:
+                  <input
+                    className="border-2 rounded-lg bg-blue-200 border-blue-500"
+                    type="password"
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
+                    style={{ width: "100%", padding: 8, marginTop: 4 }}
+                  />
+                </label>
+              </div>
+              {error && (
+                <div style={{ color: "red", marginBottom: 12 }}>{error}</div>
+              )}
+              <button
+                type="submit"
+                className="border-blue-300 border-2 mt-5 hover:bg-pink-500 rounded-lg bg-black text-white font-bold"
+                style={{ width: "100%", padding: 10 }}
+              >
+                Login
+              </button>
             </form>
-        </div>
-        </>
+          </div>
+        </body>
+      </>
     );
 };
 
